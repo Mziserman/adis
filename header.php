@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-    <head>
-        <meta charset="<?php bloginfo( 'charset' ); ?>" />
-        <title><?php wp_title(); ?></title>
-        <?php wp_head(); ?>
-    </head>
-    <body <?php body_class(is_home() ? array('nice') : array('notNice')) ?>>
-    	<?php wp_nav_menu(array('theme_location'=>'primary')) ?>
+	<head>
+		<meta charset="<?php bloginfo( 'charset' ); ?>" />
+		<title><?php wp_title(); ?></title>
+		<?php wp_head(); ?>
+	</head>
+	<body>
+		  <?php 
+
+		  $id = wp_get_current_user()->ID;
+                
+		  checkProfil($id);
+    
+		  wp_nav_menu(); ?>

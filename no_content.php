@@ -1,1 +1,1 @@
-<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+<p><?php _e('yolo, no posts matched your criteria.'); ?></p>

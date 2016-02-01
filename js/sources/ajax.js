@@ -13,19 +13,19 @@ jQuery(document).ready(function() {
         lieu        = $('.lieu select').val(),
         duree       = $('.duree input').val(),
         salaire     = $('.salaire input').val(),
-        description = $('.description input').val(),
+        description = $('.description textarea').val(),
         mail        = $('.mail input').val();
 
     data    = { action : 'formulaire', date : date, contrat: contrat, poste: poste, entreprise : entreprise, lieu : lieu, duree : duree, salaire : salaire, description : description, mail : mail};
     ajaxurl	= '../wp-admin/admin-ajax.php';
-
-    console.log(data);
     
     jQuery.post(
       ajaxurl,
       data,
       function(response){
-        console.log(response);
+        $('.state').text(response)        
+        $('.state').fadeIn();
+        $('.state').delay(2000).fadeOut();
       }
     );
 
@@ -47,4 +47,3 @@ jQuery(document).ready(function() {
   });
 
 });
-

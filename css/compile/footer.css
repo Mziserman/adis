@@ -1,0 +1,40 @@
+footer {
+  color: #eee;
+  background: #272727;
+  width: 100%;
+  height: 200px;
+  bottom: 0; }
+  footer .content {
+    width: 100%;
+    margin: auto; }
+    footer .content h2 {
+      font-size: 12px;
+      margin-bottom: 10px; }
+    footer .content ul li {
+      font-size: 10px;
+      margin-top: 20px; }
+    footer .content div {
+      display: inline-block;
+      float: left;
+      margin-left: 4%;
+      margin-top: 25px;
+      margin-bottom: 20px;
+      width: 10%; }
+    footer .content .copyright {
+      font-size: 8px;
+      margin-top: 50px;
+      text-align: center; }
+      footer .content .copyright img {
+        width: 90px;
+        margin: auto;
+        margin-bottom: 5px; }
+    footer .content .propos {
+      font-size: 10px;
+      width: 25%;
+      line-height: 15px; }
+    footer .content .pictures {
+      margin-top: 40px;
+      width: 24%; }
+      footer .content .pictures img {
+        width: 100px;
+        margin-left: 20px; }

@@ -100,6 +100,18 @@ function create_post_type() {
                        'has_archive' => true
                      )
                     );
+  
+  register_post_type( 'news',
+                     array(
+                       'labels' => array(
+                         'name' => __('News'),
+                         'singular_name' => __('News')
+                       ),
+                       'public' => true,
+                       'supports' => array('title', 'editor', 'thumbnail'),
+                       'has_archive' => true
+                     )
+                    );
 
   register_taxonomy(  
     'contrat', 
@@ -169,7 +181,7 @@ function formulaire(){
     update_field("field_56a400a64cbfb", $_POST['duree'], $customPostId);
     update_field("field_56a400d94cbfc", $_POST['salaire'], $customPostId);
     update_field("field_56a40f36fc9f1", $_POST['description'], $customPostId);
-    update_field("field_56a40f86fc9f2", $_POST['contact'], $customPostId);
+    update_field("field_56a40f86fc9f2", $_POST['mail'], $customPostId);
     wp_set_object_terms($customPostId, $_POST['poste'], 'poste');
     wp_set_object_terms($customPostId, $_POST['entreprise'], 'entreprise');
     wp_set_object_terms($customPostId, $_POST['lieu'], 'lieu');
@@ -178,7 +190,7 @@ function formulaire(){
 
   } else {
 
-    echo 'Un champs doit etre vide';
+    echo 'Un champs doit être vide';
 
   } 
 

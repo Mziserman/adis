@@ -1,0 +1,75 @@
+.etudiant {
+  margin-top: 20px;
+  float: left;
+  margin-left: 15%; }
+  .etudiant .pic {
+    display: inline-block;
+    float: left;
+    margin-right: 20px; }
+    .etudiant .pic img {
+      height: 75px;
+      width: 75px;
+      border-radius: 50%;
+      border: 2px solid #EB8B32; }
+  .etudiant .info {
+    float: left;
+    display: inline-block; }
+    .etudiant .info .name {
+      font-size: 25px; }
+    .etudiant .info .promo {
+      font-size: 18px;
+      margin-top: 10px; }
+    .etudiant .info .diplome {
+      margin-top: 10px; }
+      .etudiant .info .diplome p {
+        margin-top: 5px;
+        margin-left: 10px; }
+
+.online {
+  float: right;
+  margin-top: 20px;
+  margin-right: 100px; }
+  .online .reseaux {
+    margin-top: 10px; }
+  .online img {
+    width: 30px;
+    margin-top: 5px;
+    margin-left: 5px; }
+
+.bio {
+  width: 100%;
+  margin-top: 200px;
+  margin-left: 15%; }
+  .bio .label {
+    margin-bottom: 20px;
+    font-size: 30px; }
+  .bio .job {
+    margin-top: 10px; }
+  .bio span {
+    color: #EB8B32; }
+  .bio .actual {
+    margin-bottom: 30px; }
+
+.update {
+  margin-top: 50px; }
+  .update .button {
+    width: 150px;
+    margin: auto; }
+    .update .button button {
+      background: #EB8B32;
+      color: white;
+      border: none;
+      width: 150px;
+      height: 30px;
+      cursor: pointer; }
+  .update .acf-form {
+    display: none; }
+    .update .acf-form #wp-acf_content-editor-container, .update .acf-form .wp-editor-tabs {
+      display: none; }
+
+#message {
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+  color: #EB8B32;
+  margin-top: -75px; }

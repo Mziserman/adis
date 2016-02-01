@@ -1,0 +1,131 @@
+.state{
+  position: fixed;
+  top: 300px;
+  z-index: 2;
+  width:300px;
+  text-align: center;
+  color: #eb8b32;
+  border: 1px solid #eb8b32;
+  border-radius: 5px;
+  padding-top: 20px;
+  line-height: 30px;
+  height: 60px;
+  overflow: hidden;
+  background: #fff;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  font-size: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 15px;
+  display: none;
+}
+
+.depose{
+  background: #F5F5F5;
+  margin-top: 20px;
+  height: 1400px;
+
+  h2{
+    text-align: center;
+    font-size: 20px;
+    padding-top: 20px;
+    color: #EB8B32;
+  }
+
+  form{
+
+    width: 80%;
+    margin: auto;
+    padding-bottom: 20px;
+
+    div{
+      margin-top: 60px;
+
+      input[type=text], input[type=number], select, input[type=email]{
+        float: right;
+        border: 1px solid black;
+        width: 200px;
+      }
+
+      label{
+        font-size:20px ;
+        color:#EB8B32;
+      }
+
+      .add{
+
+        font-size: 15px;
+        margin-top: 15px;
+
+
+        input{
+
+          float: inherit;
+          width: 150px;
+
+        }
+
+        button{
+          color: white;
+          background: #EB8B32;
+          border: none;
+          font-size: 12px;
+
+        }
+
+      }
+
+    }
+
+    .description{
+
+      textarea{
+
+        width: 80%;
+        height: 150px;
+        margin-top: 20px;
+        border: 1px solid black;
+        margin-left: 100px;
+
+      }
+
+    }
+
+    .contrat{
+
+      span{
+
+        input{
+          margin-left: 20px;    
+        }
+
+      }
+
+    }
+
+    .submit{
+
+      width: 200px;
+      height: 50px;
+      color: white;
+      margin-left: auto;
+      margin-right: auto;
+      border: none;
+
+      input[type=submit]{
+
+        width: 200px;
+        height: 50px;
+        color: white;
+        background: #EB8B32;
+        border: none;
+
+      }
+
+    }
+
+  }
+
+}

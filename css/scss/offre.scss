@@ -1,0 +1,40 @@
+.offre{
+
+  margin-top: 20px;
+  width: 50%;
+  margin: auto;
+  
+  div{
+
+    display: block;
+    margin-top: 8%;
+
+    .right{
+      float: right;
+    }
+    
+    .left{
+      
+      color:#eb8b32;
+      
+    }
+
+  }
+  
+  .desc{
+    
+    .right{
+      float: left;
+      margin-top: 5px;margin-bottom: 10px;
+      font-size: 15px;
+    }
+    
+  }
+  
+  .contact{
+    
+    margin-top: 40px;
+    
+  }
+
+}

@@ -1,0 +1,57 @@
+.popconnexion{
+
+  position: absolute;
+  width: 50%;
+  height: 300px;
+  background: #ddd;
+  left: 25%;
+  top: -100%;
+  z-index: 5;
+
+  .quit{
+    
+    float: right;
+    margin-right: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    
+  }
+  
+  #login-form{
+
+    width: 58%;
+    margin: auto;
+    margin-top: 50px;
+
+    p{
+      margin-top: 25px;
+      input{
+        float: right;
+      }
+    }
+    
+    a{
+      display: block;
+      width: 100%;
+      text-align: center;
+      height: 20px;
+      margin-top: 75px;
+    }
+
+    .login-remember{
+      margin-right: 70px;
+    }
+    
+    .login-submit{
+      width: 100%;
+      input{
+        font-size: 18px;
+        margin-right: 75px;
+        width: 150px;
+        height: 30px;
+      }
+    }
+
+  }
+
+}

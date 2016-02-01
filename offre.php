@@ -1,16 +1,20 @@
 
 <a href="<?php the_permalink(); ?>">
-	<div>
-		<?php the_field('date') ?>
+  <?php if($count % 2 == 0){ ?>
+  <ul class="grey">
+    <?php } else { ?>
+    <ul class="white">
+      <?php } ?>
+      <li><?php the_field('date') ?></li>
 
-		<?php the_field('entreprise') ?>
+      <li><?php the_field('entreprise') ?></li>
 
-		<?php the_field('poste') ?>
+      <li><?php the_field('poste') ?></li>
 
-		<?php the_field('lieu') ?>
+      <li><?php the_field('lieu') ?></li>
 
-		<?php the_field('duree') ?> mois
+      <li><?php the_field('duree') ?> mois</li>
 
-		<?php the_field('salaire') ?> euros
-	</div>
-</a>
+      <li><?php the_field('salaire') ?> euros</li>
+    </ul>
+    </a>

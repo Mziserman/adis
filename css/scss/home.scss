@@ -1,0 +1,84 @@
+body{
+  background-color: #f00;
+  color:#00f;
+  height: 100%;
+}
+
+.container{
+  padding-top: 100px;
+  width: 90%;
+  margin: auto;
+  min-height: 90vh;
+  
+  .news{
+    float: left;
+    width: 54%;
+
+    .article{
+
+      .info{
+
+        margin-bottom: 10px;
+
+        div{
+          display: inline-block;
+        }
+
+        .date{
+          float: right;
+        }
+
+        .author{
+          color:#eb8b32;
+        }
+
+      }
+
+      margin-top: 50px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 20px;
+
+      h1{
+        font-size: 40px;
+        font-family: Montserrat;
+        font-weight: 700;
+      }
+
+      .content{
+        margin-top: 40px;
+      }
+
+    }
+
+  }
+
+  .sociaux{
+    margin-top: 50px;
+    float: left;
+    margin-left: 12%;
+
+    img{
+      width: 50px;
+    }
+
+    .trait{
+      width: 300px;
+      margin-top: 10px;
+      height: 1px;
+      background: #ddd;
+    }
+
+    .logos{
+
+      margin-top: 10px;
+
+      img{
+        width: 30px;
+        margin-left: 10px;
+      }
+
+    }
+
+  }
+
+}

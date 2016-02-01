@@ -1,5 +1,5 @@
-<?php get_header(); ?>
-
+<div class="popconnexion">
+<div class="quit">X</div>
 <?php
 //	 Formulaire de connexion
 	if ( ! is_user_logged_in() ) {
@@ -17,10 +17,8 @@
 	        'remember'       => true, //afficher l'option se ouvenir de moi
 	        'value_remember' => false //se souvenir par défaut ?
 			
-			
 		) );
 		
 	}
 ?>
-
-<?php get_footer(); ?>
+</div>

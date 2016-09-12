@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ADIS</title>
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/app.css">
+  <script type="text/javascript" src="/js/jquery.min.js"></script>  
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="main">
+    {{>menu}}
+    
+    {{#each messages}}
+      <div class="alert alert-warning">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        {{this}}
+      </div>
+    {{/each}}
+
+    <div class="contact">  
+      <form method="post" action="/admin/update" id="profil">
+        
+        <label for="first_name">Prénom</label>
+        <input id="first_name" type="text" name="first_name" value="{{ user.first_name }}">
+        <br>
+        
+        <label for="last_name">Nom</label>
+        <input id="last_name" type="text" name="last_name" value="{{ user.last_name }}">
+        <br>
+        
+        <label for="profile_pictures">profile_pictures</label>
+        <input id="profile_pictures" type="text" name="profile_pictures" value="{{ user.profile_pictures }}">
+        <br>
+        
+        <label for="email">Email</label>
+        <input id="email" type="text" name="email" value="{{ user.email }}">
+        <br>
+        
+        <label for="headline">Poste Actuel</label>
+        <input id="headline" type="text" name="headline" value="{{ user.headline }}">
+        <br>
+        
+        <label for="profil">Profil linkedin</label>
+        <input id="profil" type="text" name="profil" value="{{ user.profil }}">
+        <br>
+        
+        <label for="promotion">Promotion</label>
+        <input class="listePromo" id="promotion" type="number" name="promotion" value="{{ user.promotion }}">
+        <br>
+        
+        <label for="diplome">Diplôme</label>
+        <select name="diplome" form="profil" id="diplome">
+          {{#select user.diplome}}
+          <option value="">Diplôme</option>
+          <option value="archive">Gestion de patrimoines audiovisuels</option>
+          <option value="production">Production</option>
+          {{/select}}
+        </select>
+        <br>
+        <br>
+
+        <input type="hidden" name="id" value="{{ user.id }}">
+
+        <input type="submit">
+      </form>
+    </div>
+      
+      <div class="push"></div>
+  </div>
+  {{>footer}}
+    
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script type="text/javascript" src="/js/app.js"></script>
+</body>
+</html>

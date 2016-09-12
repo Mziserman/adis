@@ -1,0 +1,41 @@
+{
+  "name": "waiting",
+  "version": "1.0.0",
+  "description": "Boilerplate Express app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arnaud Allouis aka Baloran <hello@baloran.fr>",
+  "license": "None",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "bulma": "0.0.27",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.2",
+    "ejs": "^2.2.4",
+    "express": "^4.11.2",
+    "express-hbs": "^1.0.1",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.13.0",
+    "fb": "^1.1.0",
+    "jquery": "^2.2.4",
+    "jsdom": "^9.2.1",
+    "knex": "^0.11.4",
+    "mongoose": "^4.3.7",
+    "node-sass-middleware": "^0.9.8",
+    "nodemailer": "^2.4.2",
+    "passport": "^0.3.2",
+    "passport-linkedin": "^1.0.0",
+    "passport-linkedin-oauth2": "^1.4.1",
+    "serve-favicon": "^2.2.0",
+    "sqlite3": "^3.1.4",
+    "underscore": "^1.8.3",
+    "underscore.string": "^3.3.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:baloran/boilerplate-express-app.git"
+  }
+}

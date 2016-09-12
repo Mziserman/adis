@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ADIS</title>
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/app.css">
+  <script type="text/javascript" src="/js/jquery.min.js"></script>  
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="main">
+    {{>menu}}
+    
+    {{#each messages}}
+      <div class="alert alert-warning">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        {{this}}
+      </div>
+    {{/each}}
+  </div>
+
+      <h2 class="imgTitle">Contactez-nous !</h2>
+  
+  <div class="main">  
+    <div class="pageContact">
+      <p>Vous avez des questions sur la formation ? Sur la vie à l'école ? Sur les débouchés ?</p>
+      <p>Vous voulez nous proposer une offre d'emploi ou de stage ? Mieux connaître nos adhérents ?</p> 
+      <p>Proposer une intervention ? Juste nous passer le bonjour ?</p>
+      <p>N'hésitez pas à nous contacter ! Le formulaire ci-dessous vous met directement en contact avec le bureau de l'Adis.</p>
+    </div>
+
+    <div class="contact">
+      <form method="post">
+        
+        <label for="mail">Votre mail</label>
+        <input id="mail" type="text" name="mail">
+        <br>
+        
+        <label for="name">Votre nom</label>
+        <input id="name" type="text" name="name">
+        <br>
+
+        <label for="subject">Sujet</label>
+        <input id="subject" type="text" name="subject">
+        <br>
+
+        <label for="body">Message</label>
+        <textarea id="body" name="body"></textarea>
+        <br>
+
+        <input type="submit">
+      </form>
+    </div>
+
+    <div class="push"></div>
+
+  </div>
+  {{>footer}} 
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script type="text/javascript" src="/js/app.js"></script>
+</body>
+</html>

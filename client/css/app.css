@@ -1,0 +1,565 @@
+/**
+ * Boilerplate Express-App
+ * Arnaud Allouis aka Baloran
+ * arnaud.allouis@baloran.fr
+ */
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,300,400italic);
+
+body{
+  font-family: 'Lato', sans-serif;
+  background: rgb(250,250,250);
+}
+
+body p {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+body ul {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+h1{
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+h2 {
+  color: rgb(215,148,4);
+  padding-top: 0.3em;
+  padding-bottom: 0.5em;
+  font-size: 65px;
+}
+
+h3 {
+  color: rgb(215,148,4);
+}
+
+/*h4 {
+  border-bottom: 2px solid rgb(215,148,4);
+  padding-bottom: 0.7em;
+}*/
+
+
+a {
+  text-decoration: none;
+  color:inherit;
+}
+
+.presentation {
+  text-align: left;
+}
+
+.page {
+  padding-bottom: 1.5em;
+}
+
+.centrer {
+  text-align: center;
+  margin-top: 2em;
+}
+
+.savoirPlus {
+  display: inline-block;
+  border: 2px solid rgb(215,148,4);
+  padding: 0.3em 0.7em;
+  color: rgb(215,148,4);
+  font-size: 20px;
+}
+
+.savoirPlus:hover {
+  text-decoration: none;
+  color: rgb(215,148,4);
+}
+
+/***********************************  HEADER / MENU **********************************/
+
+.logoNav {
+  max-width: 135px;
+  margin: 0 auto;
+  padding: 0.3em;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+  width: 98%;
+}
+
+nav ul {
+  align-items: center;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+nav ul li {
+  padding: 0.7em;
+  border: 2px solid rgb(215,148,4);
+  margin-bottom: 0.3em;
+  display: block;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+header a:hover {
+  color: rgb(215,148,4);
+  text-decoration: none;
+}
+
+header a:active {
+  color: rgb(215,148,4);
+}
+
+/****************************************** HOME PICTURES AND TITLES *****************************************/
+
+
+.imgTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 100%;
+  height: 170px;
+  background-image: url(/img/wallpaper14.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0.5em 0 1em;
+}
+
+.imgTitleHome {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  width: 100%;
+  height: 400px;
+  background-image: url(/img/wallpaper14.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 0 3em;
+}
+
+.imgTitleHome h2,
+.imgTitleHome h3 {
+  color: white;
+}
+
+.main {
+  max-width: 95%;
+  margin: 0 auto;
+  text-align: center;
+  padding-right: 0.7em;
+  padding-left: 0.7em;
+}
+
+.boutonHome {
+  display: inline-block;
+  border: 2px solid rgb(250,250,250);
+  padding: 0.5em 0.3em;
+  background-color: rgb(250,250,250);
+  color: rgb(215,148,4);
+  font-size: 18px;
+  min-width: 150px;
+  margin: 2em 1em;
+}
+
+.boutonHome:first-of-type {
+  border: 2px solid rgb(215,148,4);
+  background-color: rgb(215,148,4);
+  color: white;
+}
+
+.boutonHome:hover {
+  text-decoration: none;
+  color: rgb(215,148,4);
+}
+
+.boutonHome:first-of-type:hover {
+  color: white;
+}
+
+
+/*********************************** STUDENTS LIST / RESEARCH / ADMIN **********************************/
+
+.search_container {
+  display: inline-block;
+  padding-bottom: 4em;
+  vertical-align: top;
+}
+
+.search_container form {
+  padding-top: 0.7em;
+}
+
+.student_container {
+  vertical-align: top;
+  padding-top: 1em;
+  border-top: 2px solid rgb(215,148,4);
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+.promoDiplomeh3 {
+  border-top: 6px solid rgb(215,148,4);
+  padding-top: 0.7em;
+}
+
+.promoDiplomeh4 {
+  border: 1px solid rgb(215,148,4);
+  padding-bottom: 0.7em;
+  padding-top: 0.6em;
+}
+
+
+.oneStudent {
+  border-bottom: 1px solid rgb(218,223,225);
+  padding: 1em;
+  margin-right: 0.8em;
+  display: inline-block;
+}
+
+.plus {
+  display: block;
+  margin-top: 1em;
+  border: 2px solid rgb(215,148,4);
+  padding: 0.3em 0.7em;
+  color: rgb(215,148,4);
+}
+
+.plus:hover {
+  text-decoration: none;
+  color: rgb(215,148,4);
+}
+
+.pict {
+  border-radius: 50%;
+  margin-right: 0.3em; 
+}
+
+.adminAdherent {
+  display: inline-block;
+  margin-top: 0.6em;
+  margin-bottom: 0.4em;
+  padding: 0 0.5em;
+}
+
+
+/************************** CONTACT ******************************/
+
+.contact,
+.profilUser {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.contact p {
+  font-size: 18px;
+}
+
+/***********************************  PROFIL **********************************/
+
+input[type=text], textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #D79404;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+select {
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+
+.profil_picture {
+  display: block;
+  border-radius: 50%; 
+  margin: 0 auto;
+}
+
+.studies {
+  width: 450px;
+  margin-left: 50px; 
+  display: inline-block; 
+}
+
+.identity {
+  margin: 0 auto;
+  font-size: 18px;
+  text-align: center;
+}
+
+
+.linked {
+  display: inline-block;
+  text-transform: uppercase;
+  margin-top: 1em;
+  background-color: rgb(215,148,4);
+  border: 2px solid rgb(215,148,4);
+  color: white;
+  padding: 0.5em 1em;
+}
+
+.linked:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.offre {
+  text-align: left;
+}
+
+.listePromo {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0; 
+  box-sizing: border-box;
+
+}
+
+
+/*********************************** FOOTER ******************************/
+
+
+.push {
+  height: 150px;  /*'.push' must be the same height as 'footer'*/ 
+}
+
+
+footer {
+  /*position: fixed;*/
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 130px;
+  width: 100%;
+  margin-top: 0.5em;
+  background-color: #282830;
+  border-top: 1px solid rgb(189,195,199);
+  box-shadow: 0px 1px 2px #888888;
+}
+
+.wrappeurFooter {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+  width: 98%;
+}
+
+.logoFooter {
+  max-width: 50px;
+  margin: 0 auto;
+  padding: 0.3em;
+}
+
+footer p {
+  font-size: 0.6em;
+  margin: 0 auto;
+  padding-bottom: 0.5em;
+  color: white;
+}
+
+.ina {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 0.3em;
+}
+
+#logoIna,
+#logoExpert {
+  margin-right: 0.6em;
+  margin-left: 0.6em;
+  width: 40px;
+  height: 40px;
+}
+
+/***************** MEDIA QUERIES ********************/
+
+
+
+
+@media screen and (min-width: 850px)
+{
+  /************************** MAIN ******************************/
+  .main {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  .imgTitle {
+    height: 370px;
+  } 
+
+
+  /************************** HEADER ******************************/
+
+  .wrappeurHeader {
+    align-items: center;
+  }
+
+  nav{
+    max-height: 130px;
+  }
+
+  nav ul li {
+    display: inline-block;
+    text-align: center;
+    margin-right: 1em;
+    border: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+
+  header a:hover {
+    color: rgb(215,148,4);
+    text-decoration: none;
+    border-bottom: 2px solid rgb(215,148,4);
+    padding-bottom: 0.8em;
+  }
+
+  .home:hover {
+    border-bottom: none;
+  }
+
+  header a:active {
+    color: rgb(215,148,4);
+  }
+
+
+
+  /************************** STUDENTS ******************************/
+  
+  .search_container {
+    margin-right: 4em;
+    max-width: 25%;
+  } 
+
+  .student_container {
+    display: inline-block;
+    border-top: none;
+    padding-top: 0;
+    max-width: 65%;
+  } 
+
+  /************************** CONTACT ******************************/
+
+  .contact,
+  .profilUser {
+    max-width: 60%;
+  }
+
+}
+
+@media screen and (min-width: 1200px)
+{
+  /************************** MAIN ******************************/
+  
+  .presentation p {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+
+  .presentation ul {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+
+  .presentation h3 {
+    max-width: 70%;
+    margin: 0 auto;
+    margin-top: 1.5em;
+    margin-bottom: 0.9em;
+  } 
+
+  /************************** HEADER ******************************/
+
+  .wrappeurHeader {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header {
+    padding-left: 6em;
+  }
+
+  .logoNav {
+    float: left;
+    margin: 0;
+    max-height: 97px;
+  }
+
+  nav{
+    width: 75%;
+    max-height: 130px;
+    margin-top: 20px;
+  }
+
+  nav ul li {
+    display: inline-block;
+    text-align: center;
+    margin-right: 1em;
+    margin-top: 18px;
+    border: none; 
+  }
+
+
+
+/************************** STUDENTS ******************************/
+  
+  .search_container {
+    margin-right: 6em;
+  }  
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

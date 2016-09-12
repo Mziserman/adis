@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+	<title>ADIS</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script type="text/javascript" src="js/jquery.min.js"></script>  
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>  
+</head>
+<body>
+  <div class="main">
+    {{>menu}}
+    
+    {{#each messages}}
+      <div class="alert alert-warning">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        {{this}}
+      </div>
+    {{/each}}
+    
+    {{#if offres}}
+  </div>
+  
+      <h2 class="imgTitle">Offre</h2>
+      
+  <div class="main">    
+      <div class="offre">
+        {{#each offres}}
+          {{{message}}}
+          <hr>
+        {{/each}}
+      </div>
+    {{/if}}
+
+    {{#if actus}}
+  </div>
+
+
+      <h2 class="imgTitle">Actu</h2>
+
+  <div class="main">    
+      {{#each actus}}
+        {{message}}
+        <hr>
+      {{/each}}
+    {{/if}}
+
+
+    <div class="push"></div> 
+  </div>
+  {{>footer}}
+  <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

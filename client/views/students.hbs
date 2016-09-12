@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ADIS</title>
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/app.css">  
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+</head>
+<body>
+  <div class="main">
+    
+    {{>menu}}
+    
+    {{#each messages}}
+      <div class="alert alert-warning">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        {{this}}
+      </div>
+    {{/each}}
+  </div>
+
+      <h2 class="imgTitle">Adhérents</h2>
+
+  <div class="main">
+    <div class="search_container">
+      <h3>Rechercher un adhérent</h3>
+      <form method="post" action="/etudiants" id="search">
+        <label for="first_name">Prenom</label>
+        <input id="first_name" type="text" name="first_name">
+        <br>
+        
+        <label for="last_name">Nom</label>
+        <input id="last_name" type="text" name="last_name">
+        <br>
+        
+        <label for="promotion">Promotion</label>
+        <input id="promotion" type="text" name="promotion">
+        <br>
+
+        <label for="diplome">Diplôme</label>
+          <select name="diplome" form="search" id="diplome">
+            <option value="">Diplôme</option>
+            <option value="archive">Gestion de patrimoines audiovisuels</option>
+            <option value="production">Production</option>
+          </select>
+        <br>
+        <br>
+        
+        <input type="submit">
+      </form>
+    </div>
+
+    <div class="student_container">
+
+      {{#each students}}
+        {{#if this.production.0.promotion}}
+              <h3 class="promoDiplomeh3">Promotion : {{this.production.0.promotion}}</h3>
+              {{#each this}}
+              <h4 class="promoDiplomeh4">Diplôme : {{this.0.diplome}}</h4>
+  
+              {{#each this}}
+    
+
+          <div class="oneStudent">
+                <img class="pict" src="{{ this.profile_pictures }}">
+                {{this.first_name}}
+                {{this.last_name}}
+                <a class="plus" href="/profil/{{ this.id }}">En savoir plus</a>
+          </div>
+            {{/each}}
+          {{/each}}
+        {{else}}
+          {{#if this.archive.0.promotion}}
+                <h3 class="promoDiplomeh3">Promotion : {{this.archive.0.promotion}}</h3>
+                {{#each this}}
+                <h4 class="promoDiplomeh4">Diplôme : {{this.0.diplome}}</h4>
+
+                {{#each this}}
+            <div class="oneStudent"> 
+                  <img class="pict" src="{{ this.profile_pictures }}" class="profil_picture">
+                  {{this.first_name}}
+                  {{this.last_name}}
+                  <a class="plus" href="/profil/{{ this.id }}">En savoir plus</a>
+            </div>
+              {{/each}}
+            {{/each}}
+          {{/if}}
+        {{/if}}
+      {{/each}}
+      <!-- /******************************************* TEST TEST TEST TEST TEST ************************************/ -->
+
+  <div class="oneStudent"> 
+                  <img class="pict" src="https://media.licdn.com/mpr/mprx/0_aODFMsnkWQu9WYUACOvFl0pk2zuB2mRKGOzW0fekSkf9WY5AF7cdcmp5wkf9W0RpG7cFN0xL3c0noEDhbSHRlmYdkc0coE3KbSHXs7wX79oUhyV2IpYEVR5zXCLF_EnTaauIjjwQ9Mp" class="profil_picture">
+                  Martin
+                  Ziserman
+                  <a class="plus" href="/profil/26">Voir plus</a>
+            </div>
+  <div class="oneStudent"> 
+                  <img class="pict" src="https://media.licdn.com/mpr/mprx/0_aODFMsnkWQu9WYUACOvFl0pk2zuB2mRKGOzW0fekSkf9WY5AF7cdcmp5wkf9W0RpG7cFN0xL3c0noEDhbSHRlmYdkc0coE3KbSHXs7wX79oUhyV2IpYEVR5zXCLF_EnTaauIjjwQ9Mp" class="profil_picture">
+                  Martin
+                  Ziserman
+                  <a class="plus" href="/profil/26">Voir plus</a>
+            </div>
+  <div class="oneStudent"> 
+                    <img class="pict" src="https://media.licdn.com/mpr/mprx/0_aODFMsnkWQu9WYUACOvFl0pk2zuB2mRKGOzW0fekSkf9WY5AF7cdcmp5wkf9W0RpG7cFN0xL3c0noEDhbSHRlmYdkc0coE3KbSHXs7wX79oUhyV2IpYEVR5zXCLF_EnTaauIjjwQ9Mp" class="profil_picture">
+                    Martin
+                    Ziserman
+                    <a class="plus" href="/profil/26">Voir plus</a>
+              </div>
+  <div class="oneStudent"> 
+                  <img class="pict" src="https://media.licdn.com/mpr/mprx/0_aODFMsnkWQu9WYUACOvFl0pk2zuB2mRKGOzW0fekSkf9WY5AF7cdcmp5wkf9W0RpG7cFN0xL3c0noEDhbSHRlmYdkc0coE3KbSHXs7wX79oUhyV2IpYEVR5zXCLF_EnTaauIjjwQ9Mp" class="profil_picture">
+                  Martin
+                  Ziserman
+                  <a class="plus" href="/profil/26">Voir plus</a>
+            </div>
+  <div class="oneStudent"> 
+                  <img class="pict" src="https://media.licdn.com/mpr/mprx/0_aODFMsnkWQu9WYUACOvFl0pk2zuB2mRKGOzW0fekSkf9WY5AF7cdcmp5wkf9W0RpG7cFN0xL3c0noEDhbSHRlmYdkc0coE3KbSHXs7wX79oUhyV2IpYEVR5zXCLF_EnTaauIjjwQ9Mp" class="profil_picture">
+                  Martin
+                  Ziserman
+                  <a class="plus" href="/profil/26">Voir plus</a>
+            </div>
+  <div class="oneStudent"> 
+                    <img class="pict" src="https://media.licdn.com/mpr/mprx/0_aODFMsnkWQu9WYUACOvFl0pk2zuB2mRKGOzW0fekSkf9WY5AF7cdcmp5wkf9W0RpG7cFN0xL3c0noEDhbSHRlmYdkc0coE3KbSHXs7wX79oUhyV2IpYEVR5zXCLF_EnTaauIjjwQ9Mp" class="profil_picture">
+                    Martin
+                    Ziserman
+                    <a class="plus" href="/profil/26">Voir plus</a>
+              </div>
+
+<!-- /******************************************* TEST TEST TEST TEST TEST ************************************/ --> 
+
+  </div>
+    
+ 
+    <div class="push"></div>  
+  </div>
+  {{>footer}}
+  <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

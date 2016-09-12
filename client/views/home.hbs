@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ADIS</title>
+  <link rel="stylesheet" href="css/bootstrap.css"> 
+  <link rel="stylesheet" href="css/app.css">
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>  
+  <script type="text/javascript" src="js/jquery.min.js"></script> 
+</head>
+<body>
+  <div class="main">
+    {{>menu}}
+  </div>		
+
+  	{{#each messages}}
+      <div class="alert alert-warning">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        {{this}}
+      </div>
+    {{/each}}
+    	
+	<div class="imgTitleHome">
+	    	<h2>Bienvenue à l'Adis !</h2>
+			<h3>L'association des diplômés de l'Ina Sup' !</h3>
+	
+		<div class="boutonsHome">
+			<a class="boutonHome" href="#adis">L'Adis</a>
+			<a class="boutonHome" href="#inaSup">L'Ina Sup'</a>
+		</div>
+    </div>	
+
+   <div class="main"> 
+
+   	<h2 id="adis">L'Adis</h2>	
+ 
+    <div class="presentation">
+ 
+	   	<p>
+		   	L'ADIS, Association des Diplômés Ina Sup' (loi 1901), a été créée en 2010 par la première promotion de diplômés des Masters de l’Ina SUP. Elle rassemble les diplômés des Masters Production Audiovisuelle, Gestion de Patrimoines Audiovisuels et de la licence Documentaliste Multimédias d’Ina SUP, le pôle d'enseignements de l'Institut national de l'audiovisuel. Depuis 2007, ces cursus forment aux métiers de la production audiovisuelle, de la gestion et de la valorisation des contenus audiovisuels et numériques.
+	   	</p>
+	   	<h3>Les missions</h3>
+	   	<p>
+		   	<ul>
+	   			<li>­Créer un réseau professionnel dynamique</li>
+	   			<li>Encourager la coopération et les échanges entre les anciens de toutes les promotions amenés à se côtoyer dans le monde du travail.</li>
+	   			<li>­Participer à l’insertion professionnelle de nos membres</li>
+	   			<li>­Développer activement la notoriété de notre école et la reconnaissance de nos diplômes au sein du monde professionnel.</li>
+	   		</ul>
+	   	</p>
+	   	<h3>Les actions</h3>
+	   	<p>
+	   		<ul>
+	   			<li>Organiser des rencontres entre adhérents et des professionnels de l’audiovisuel.</li>
+	   			<li>Permettre un retour d’expériences entre anciens et nouveaux élèves</li>
+					<li>Diffuser des offres de stage et d'emploi</li>
+					<li>Enquêter sur l’insertion professionnelle des diplômés</li>
+					<li>Echanger sur les évolutions du secteur</li>
+	   		</ul>
+	   	</p>
+	   	<p>
+		   	Ina SUP, l’école supérieure de l’audiovisuel et du numérique de l’Ina, propose deux masters dans les champs de l’audiovisuel et des médias numériques, ayant pour ambition de conduire leurs diplômés à un haut niveau académique et de former des professionnels de l’image et des médias à fort potentiel d’évolution.
+	   	</p>
+	</div>
+	   	
+	   	<h2 id="inaSup">L'ina Sup'</h2>
+	   	
+	<div class="presentation">
+	   	<h3>Master Production Audiovisuelle</h3>
+	   	<p>
+	   		Pour initier et accompagner la création d'œuvres audiovisuelles pour tous les écrans et sur tous les supports (cinéma, télévision, web et mobile), ce cursus forme des professionnels capables d'initier et d'accompagner la création d'oeuvres audiovisuelles pour tous les écrans et sur tous les supports : 
+	   	</p>
+	   	<p>
+	   		<ul>
+	   			<li>Producteur d'oeuvres de fiction pour le cinéma et la télévision, de documentaires, d'émissions de flux, de formats et de contenus pour les médias numériques</li>
+	   			<li>Responsable de développement de projets, responsable des coproductions</li>
+	   			<li>Chef de projet vidéo/DVD</li>
+	   			<li>Responsable des acquisitions, pré-acquisitions</li>
+	   			<li>Responsable de distribution cinématographique et audiovisuelle</li>
+	   			<li>Programmateur de chaînes de télévision généraliste ou thématique, de sites Internet, de services de VOD.</li>
+	   		</ul>
+	   	</p>
+	   	
+	   	<div class="centrer">
+	   	<a class="savoirPlus" href="http://www.ina-expert.com/masters-audiovisuels-et-diplomes-de-deuxieme-cycle/diplome-ina-production-audiovisuelle.html">En savoir plus</a>
+	   	</div>
+
+	   	<h3>Master Gestion de Patrimoines Audiovisuels</h3>
+	   	<p>Pour devenir un professionnel en expertise, conservation, gestion et valorisation des fonds audiovisuels et numériques, ce cursus forme des professionnels capables d'expertiser, conserver, gérer et valoriser des fonds audiovisuels et numériques :</p>
+	   	<p>
+	   		<ul>
+	   			<li>Responsable de collections audiovisuelles et numériques</li>
+	   			<li>Chef de projet dans le domaine de la valorisation de patrimoines audiovisuels</li>
+	   			<li>Consultant pour la valorisation d'archives et de catalogues de films et de programmes</li>
+	   			<li>Chef de projet dans le secteur de l'édition en ligne et off-line</li>
+	   			<li>Responsable de projets de conservation et de migration vers le numérique de collections audiovisuelles</li>
+	   			<li>Responsable de projets événementiels et muséographiques</li>
+	   			<li>Recherchiste d'images dans la production audiovisuelle</li>
+	   		</ul>
+	   	</p>
+	   	<div class="centrer">
+	   	<a class="savoirPlus" href="http://www.ina-expert.com/masters-audiovisuels-et-diplomes-de-deuxieme-cycle/diplome-ina-gestion-de-patrimoines-audiovisuels.html">En savoir plus</a>
+	   	</div>
+	</div>
+
+
+
+    <div class="push"></div>
+	</div>
+  {{>footer}}
+  <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

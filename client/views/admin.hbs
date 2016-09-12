@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Admin</title>
-  <link rel="stylesheet" href="/css/bootstrap.css">
-  <link rel="stylesheet" href="/css/app.css">
-  <script type="text/javascript" src="/js/jquery.min.js"></script>  
-  <script type="text/javascript" src="/js/bootstrap.min.js"></script>  
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div class="main">
+<div class="main">
     {{>menu}}
-    
-    <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+    <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
@@ -23,139 +24,142 @@
             </div>
         </div>
     </div>
-  </div>
+</div>
 
-    <h2 class="imgTitle">Admins</h2>
-    
-  <div class="main">  
+<h2 class="imgTitle">Admins</h2>
+
+<div class="main">
     <div class="search_container">
-    <h3>Rechercher un adhérent</h3>
-      <form method="post" action="/admin/search" id="search">
-        <label for="first_name">Prenom</label>
-        <input id="first_name" type="text" name="first_name">
-        <br>
+        <h3>Rechercher un adhérent</h3>
+        <form method="post" action="/admin/search" id="search">
+            <label for="first_name">Prenom</label>
+            <input id="first_name" type="text" name="first_name">
+            <br>
 
-        <label for="last_name">Nom</label>
-        <input id="last_name" type="text" name="last_name">
-        <br>
+            <label for="last_name">Nom</label>
+            <input id="last_name" type="text" name="last_name">
+            <br>
 
-        <label for="promotion">Promotion</label>
-        <input id="promotion" type="text" name="promotion">
-        <br>
-        <br>
+            <label for="promotion">Promotion</label>
+            <input id="promotion" type="text" name="promotion">
+            <br>
+            <br>
 
-        <select name="diplome" form="search" id="diplome">
-          <option value="">Diplôme</option>
-          <option value="archive">Gestion de patrimoines audiovisuels</option>
-          <option value="production">Production</option>
-        </select>
-        <br>
-        <br>
+            <select name="diplome" form="search" id="diplome">
+                <option value="">Diplôme</option>
+                <option value="archive">Gestion de patrimoines audiovisuels</option>
+                <option value="production">Production</option>
+            </select>
+            <br>
+            <br>
 
-        <select name="validated" form="search" id="validated">
-          <option value="">Adhérent Validé</option>
-          <option value="1">Validé</option>
-          <option value="0">Non validé</option>
-        </select>
-        <br>
-        <br>
+            <select name="validated" form="search" id="validated">
+                <option value="">Adhérent Validé</option>
+                <option value="1">Validé</option>
+                <option value="0">Non validé</option>
+            </select>
+            <br>
+            <br>
 
-        <input type="submit" value="Rechercher">
-      </form>
+            <input type="submit" value="Rechercher">
+        </form>
 
 
     </div>
-    
+
 
     <div class="student_container">
-      
-      <h3>Administrateurs</h3>
-      
-      {{#each admins}}
-        <div class="oneStudent">
-          <img class="pict" src="{{ profile_pictures }}"> 
-          {{ first_name }} {{ last_name }} 
-          <a class="plus" href="/admin/update/{{ id }}">Modifier</a>
 
-          <form method="post" action="/admin/update" id="student{{ id }}">
-            <div class="adminAdherent"> 
-              <label for="isValidated{{id}}">Validé</label>
-              <input id="isValidated{{id}}" type="checkbox" name="validated" {{ validated }}>
-              <br>
-            </div> 
+        <h3>Administrateurs</h3>
 
-            <div class="adminAdherent"> 
-              <select name="role" form="student{{ id }}" id="role{{ id }}">
-                {{#select role}}
-                <option value="admin">Admin</option>
-                <option value="student">Adhérent</option>
-                {{/select}}
-              </select>
-            </div> 
-            
-            <br>
+        {{#each admins}}
+            <div class="oneStudent">
+                <img class="pict" src="{{ profile_pictures }}">
+                {{ first_name }} {{ last_name }}
+                <a class="plus" href="/admin/update/{{ id }}">Modifier</a>
 
-            <input type="hidden" name="user_id" value="{{ id }}">
+                <form method="post" action="/admin/update" id="student{{ id }}">
+                    <div class="adminAdherent">
+                        <label for="isValidated{{id}}">Validé</label>
+                        <input id="isValidated{{id}}" type="checkbox" name="validated" {{ validated }}>
+                        <br>
+                    </div>
 
-            <input type="submit" value="Envoyer">
-          </form>
+                    <div class="adminAdherent">
+                        <select name="role" form="student{{ id }}" id="role{{ id }}">
+                            {{#select role}}
+                                <option value="admin">Admin</option>
+                                <option value="student">Adhérent</option>
+                            {{/select}}
+                        </select>
+                    </div>
 
-          <br>
+                    <br>
 
-          <button class="btn btn-danger" data-href="/admin/delete/{{ id }}" data-toggle="modal" data-target="#confirm-delete">
-            Supprimer l'adhérent {{id}}
-          </button>
-          <br>
-         </div> 
-        {{/each}} 
-      
-      <h3>Adhérents</h3>
-      {{#each students}}
+                    <input type="hidden" name="user_id" value="{{ id }}">
 
-      <div class="oneStudent">
-        <img class="pict" src="{{ profile_pictures }}"> 
-        {{ first_name }} {{ last_name }} 
-        <a class="plus" href="/admin/update/{{ id }}">Modifier</a>
-     
+                    <input type="submit" value="Envoyer">
+                </form>
 
-        <form method="post" action="/admin/update" id="student{{ id }}">
-          <div class="adminAdherent">
-            <label for="isValidated{{id}}">Validé</label>
-            <input id="isValidated{{id}}" type="checkbox" name="validated" {{ validated }}>
-            <br>
-          </div>
+                <br>
 
-          <div class="adminAdherent"> 
-            <select name="role" form="student{{ id }}">
-              {{#select role}}
-              <option value="admin">Admin</option>
-              <option value="student">Adhérent</option>
-              {{/select}}
-            </select>
-          </div> 
-            
-            <br>
+                <button class="btn btn-danger" data-href="/admin/delete/{{ id }}" data-toggle="modal"
+                        data-target="#confirm-delete">
+                    Supprimer l'adhérent {{id}}
+                </button>
+                <br>
+            </div>
+        {{/each}}
 
-            <input type="hidden" name="user_id" value="{{ id }}">
+        <h3>Adhérents</h3>
+        {{#each students}}
 
-            <input type="submit" value="Envoyer">
-        </form>
-      
-        <br>
+            <div class="oneStudent">
+                <img class="pict" src="{{ profile_pictures }}">
+                {{ first_name }} {{ last_name }}
+                <a class="plus" href="/admin/update/{{ id }}">Modifier</a>
 
-        <button class="btn btn-danger" data-href="/admin/delete/{{ id }}" data-toggle="modal" data-target="#confirm-delete">
-          Supprimer l'adhérent {{id}}
-        </button>
-        <br>
-      </div>
 
-      {{/each}} 
-      <div class="push"></div>
-    </div>  
-    
-    
+                <form method="post" action="/admin/update" id="student{{ id }}">
+                    <div class="adminAdherent">
+                        <label for="isValidated{{id}}">Validé</label>
+                        <input id="isValidated{{id}}" type="checkbox" name="validated" {{ validated }}>
+                        <br>
+                    </div>
+
+                    <div class="adminAdherent">
+                        <select name="role" form="student{{ id }}">
+                            {{#select role}}
+                                <option value="admin">Admin</option>
+                                <option value="student">Adhérent</option>
+                            {{/select}}
+                        </select>
+                    </div>
+
+                    <br>
+
+                    <input type="hidden" name="user_id" value="{{ id }}">
+
+                    <input type="submit" value="Envoyer">
+                </form>
+
+                <br>
+
+                <button class="btn btn-danger" data-href="/admin/delete/{{ id }}" data-toggle="modal"
+                        data-target="#confirm-delete">
+                    Supprimer l'adhérent {{id}}
+                </button>
+                <br>
+            </div>
+
+        {{/each}}
+        <input type="submit" value="Envoyer tout" onclick="submitForms()">
+        <div class="push"></div>
+    </div>
+
+
     {{>footer}}
-	</div>
-  <script type="text/javascript" src="js/app.js"></script>
+</div>
+<script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>

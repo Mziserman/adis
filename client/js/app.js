@@ -7,3 +7,9 @@ form.find("a").click(function(e) {
   e.preventDefault();
   form.submit();
 });
+
+var submitForms = function() {
+  for (var i = 0; i < document.forms.length; i++) {
+    document.forms[i].submit();
+  }
+}

@@ -4,19 +4,19 @@ var _ = require('underscore');
 var FB = require('fb');
 var routeUtils = require('../utils/route');
 var userUtils = require('../utils/user');
-var userModel = require('../model/user')
+var userModel = require('../model/user');
 
 var adminRoutes;
 
 
 adminRoutes = function () {
   var router = express.Router();
-  
-  router.get('/admin', routeUtils.requireRoleOrRedirect('admin', '/'), function(req, res) {
+
+  router.get('/admin', routeUtils.requireRoleOrRedirect('admin', '/'), function (req, res) {
 
     var loggedUser = userUtils.getLoggedUser(req);
 
-    userModel.findAll(function(err, result) {
+    userModel.findAll(function (err, result) {
       if (err) {
         console.log(err);
       }
@@ -33,16 +33,16 @@ adminRoutes = function () {
         students: preparedUsers.students,
         admins: preparedUsers.admins,
         loggedUser: loggedUser
-      }) 
+      })
     });
   });
 
-  router.post('/admin/search', routeUtils.requireRoleOrRedirect('admin', '/'), function(req, res) {
+  router.post('/admin/search', routeUtils.requireRoleOrRedirect('admin', '/'), function (req, res) {
 
     var userRequest = req.body;
     var cleanUserRequest = userUtils.removeEmptyValues(userRequest);
 
-    userModel.find(cleanUserRequest, function(err, result) {
+    userModel.find(cleanUserRequest, function (err, result) {
 
       if (err) {
         console.log(err);
@@ -65,44 +65,44 @@ adminRoutes = function () {
     });
   });
 
-  router.get('/admin/resultat', function(req, res) {
+  router.get('/admin/resultat', function (req, res) {
 
     var loggedUser = userUtils.getLoggedUser(req);
 
     var students = req.cookies.searchResult.students;
     var admins = req.cookies.searchResult.admins;
-    
+
     res.render('admin',
-        {
-          messages: req.flash('info'),
-          admins: admins,
-          students: students,
-          loggedUser: loggedUser
-        }
-      );
+      {
+        messages: req.flash('info'),
+        admins: admins,
+        students: students,
+        loggedUser: loggedUser
+      }
+    );
 
   });
 
 
-  router.post('/admin/update', routeUtils.requireRoleOrRedirect('admin', '/'), function(req, res) {
+  router.post('/admin/update', routeUtils.requireRoleOrRedirect('admin', '/'), function (req, res) {
 
     var user = userUtils.prepareUserForUpdate(req.body);
 
-    userModel.updateForId(user.id, user.user, function(err) {
+    userModel.updateForId(user.id, user.user, function (err) {
       if (err) {
         console.log(err);
       }
-    })
+    });
 
     res.redirect('/admin');
   });
 
 
-  router.get('/admin/update/:id', routeUtils.requireRoleOrRedirect('admin', '/'), function(req, res) {
+  router.get('/admin/update/:id', routeUtils.requireRoleOrRedirect('admin', '/'), function (req, res) {
 
     var loggedUser = userUtils.getLoggedUser(req);
 
-    userModel.find({id: req.params.id}, function(err, result) {
+    userModel.find({id: req.params.id}, function (err, result) {
 
       res.render('adminUpdate',
         {
@@ -116,9 +116,9 @@ adminRoutes = function () {
 
   });
 
-  router.get('/admin/delete/:id', routeUtils.requireRoleOrRedirect('admin', '/'), function(req, res) {
+  router.get('/admin/delete/:id', routeUtils.requireRoleOrRedirect('admin', '/'), function (req, res) {
 
-    var user = userModel.deleteForId(req.params.id, function(err) {
+    var user = userModel.deleteForId(req.params.id, function (err) {
       if (err) {
         console.log(err);
       }
@@ -128,6 +128,6 @@ adminRoutes = function () {
 
   });
   return router;
-}
+};
 
 module.exports = adminRoutes;

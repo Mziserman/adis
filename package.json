@@ -22,7 +22,7 @@
     "fb": "^1.1.0",
     "jquery": "^2.2.4",
     "jsdom": "^9.2.1",
-    "knex": "^0.11.4",
+    "knex": "^0.11.10",
     "mongoose": "^4.3.7",
     "node-sass-middleware": "^0.9.8",
     "nodemailer": "^2.4.2",
@@ -37,5 +37,8 @@
   "repository": {
     "type": "git",
     "url": "git://github.com:baloran/boilerplate-express-app.git"
+  },
+  "devDependencies": {
+    "express-handlebars": "^3.0.0"
   }
 }

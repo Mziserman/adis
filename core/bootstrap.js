@@ -40,6 +40,8 @@ module.exports = function (app) {
       '$& selected="selected"');
   });
 
+
+
   app.use(express.static(__dirname + '/client/'));
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({
@@ -69,8 +71,9 @@ module.exports = function (app) {
   passport.use(new LinkedInStrategy({
     clientID: "77s899qhhimkbr",
     clientSecret: "GzVxFh5WUw0IQZtg",
-    callbackURL: "http://adis.eu-west-1.elasticbeanstalk.com/auth/linkedin/callback",
-    scope: ['r_basicprofile', 'r_emailaddress'],
+    callbackURL: "http://127.0.0.1:1984/auth/linkedin/callback",
+    /*callbackURL: "http://adis.eu-west-1.elasticbeanstalk.com/auth/linkedin/callback",
+    */scope: ['r_basicprofile', 'r_emailaddress'],
     state: true
   }, function (accessToken, refreshToken, profile, done) {
     var parsedProfile = linkedinUtils.parse(profile);

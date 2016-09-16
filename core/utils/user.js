@@ -22,7 +22,7 @@ var userUtils = {
       headline: returnedUser.headline,
       profil: returnedUser.profil,
       role: returnedUser.role,
-      validated: returnedUser.validated == "on" ? 1 : 0,
+      validated: returnedUser.validated ? 1 : 0,
     };
     return {
       id: returnedUser.user_id,
@@ -86,7 +86,6 @@ var userUtils = {
       students: []
     };
     for (var i = 0; i < userArray.length; i++) {
-      console.log(userArray[i])
       if (userArray[i]['role'] == "admin") {
         splitedUsers.admins.push(userArray[i])
       }

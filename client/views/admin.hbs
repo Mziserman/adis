@@ -5,8 +5,6 @@
     <title>Admin</title>
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/app.css">
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="main">
@@ -97,8 +95,6 @@
                     <br>
 
                     <input type="hidden" name="user_id" value="{{ id }}">
-
-                    <input type="submit" value="Envoyer">
                 </form>
 
                 <br>
@@ -128,7 +124,7 @@
                     </div>
 
                     <div class="adminAdherent">
-                        <select name="role" form="student{{ id }}">
+                        <select name="role" form="student{{ id }}" id="role{{ id }}">
                             {{#select role}}
                                 <option value="admin">Admin</option>
                                 <option value="student">Adhérent</option>
@@ -139,8 +135,6 @@
                     <br>
 
                     <input type="hidden" name="user_id" value="{{ id }}">
-
-                    <input type="submit" value="Envoyer">
                 </form>
 
                 <br>

@@ -9,7 +9,22 @@ form.find("a").click(function(e) {
 });
 
 var submitForms = function() {
-  for (var i = 0; i < document.forms.length; i++) {
-    document.forms[i].submit();
-  }
+  postData = [];
+  forms = $('form')
+  forms.each(function(i, el) {
+    var curr = {};
+    if (i != 0) {
+      curr["validated"] = $("#isValidated" + i).is(':checked');
+      curr["role"] = $(el).find('select[name=role]').val()
+      curr["user_id"] = $(el).find('input[type=hidden]').val()
+      postData.push(curr)
+    }
+  })
+
+  var xhr = new XMLHttpRequest();
+
+  xhr.open("POST", "/admin/update", true);
+  xhr.setRequestHeader("Content-type", "application/json");
+  xhr.send(JSON.stringify(postData));
+  window.location.assign('/admin')
 }

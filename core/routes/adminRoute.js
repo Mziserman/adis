@@ -85,15 +85,14 @@ adminRoutes = function () {
 
 
   router.post('/admin/update', routeUtils.requireRoleOrRedirect('admin', '/'), function (req, res) {
-
-    var user = userUtils.prepareUserForUpdate(req.body);
-
-    userModel.updateForId(user.id, user.user, function (err) {
-      if (err) {
-        console.log(err);
-      }
-    });
-
+    _.each(req.body, function(element, index) {
+      var user = userUtils.prepareUserForUpdate(element);
+      userModel.updateForId(user.id, user.user, function (err) {
+        if (err) {
+          console.log(err);
+        }
+      });
+    })
     res.redirect('/admin');
   });
 
